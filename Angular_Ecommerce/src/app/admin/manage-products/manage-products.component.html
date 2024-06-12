@@ -1,0 +1,54 @@
+<div class="page-container">
+  <div>
+    <button mat-button routerLink="/admin/manage-products/product" routerLinkActive="active">Create Product</button>
+  </div>
+
+    <div class="table-container mat-elevation-z8">
+        <mat-table #table [dataSource]="productDataSource">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{product.id}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{product.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Price Column -->
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{product.price | currency:'USD':true }} </mat-cell>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="thumbnail">
+                <mat-header-cell *matHeaderCellDef> Thumbnail </mat-header-cell>
+                <mat-cell *matCellDef="let product"> todo </mat-cell>
+            </ng-container>
+
+            <!-- Color Column -->
+            <ng-container matColumnDef="delete">
+                <mat-header-cell *matHeaderCellDef> Delete Product </mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <app-delete-product-button [product]="product"></app-delete-product-button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/admin/manage-products/product/{{row.id}}"></mat-row>
+        </mat-table>
+
+        <mat-paginator #paginator
+                       [length]="productDatabase.data.length"
+                       [pageIndex]="0"
+                       [pageSize]="25"
+                       [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+
+    </div>
+
+</div>

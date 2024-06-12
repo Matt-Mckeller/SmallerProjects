@@ -1,0 +1,35 @@
+<div>
+  <h2 *ngIf="displayTitle">My Cart ({{itemPurchaseCount}})</h2>
+  <div class="list-container" *ngIf="itemsBeingPurchased.length">
+    <div *ngFor="let item of itemsBeingPurchased"
+         fxLayout="row" fxFlex="100%" fxLayoutGap="1%"
+         class="list-row">
+      <div fxFlex="25%" class="item-image">
+        <product-image [product]="item" (click)="redirect(item.id)"></product-image>
+      </div>
+      <div fxFlex="25%" fxLayoutAlign="center center">
+          <p class="mat-body-1">{{item.name}}</p>
+      </div>
+      <div fxFlex="25%" *ngIf="displayRemove" fxLayoutAlign="center center">
+        <button mat-button class="remove-item-button" (click)="removeItem(item)"><p class="mat-body-1">Remove</p></button>
+      </div>
+      <div fxFlex="25%" fxLayoutAlign="center center">
+        <p class="mat-body-2">{{item.price | currency:'USD':true}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-container">
+    <div fxLayout="column" fxFlex="100%" fxLayoutGap="1%">
+      <div fxFlex="100%">
+        <p>Total Items: <span class="mat-body-2">{{itemPurchaseCount}}</span></p>
+      </div>
+      <div fxFlex="100%">
+        <p>Shipping Estimate:  <span class="mat-body-2">$0.00</span></p>
+      </div>
+      <div fxFlex="100%">
+        <p>Cart Total: <span class="mat-body-2">{{checkoutTotal | currency:'USD':true}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

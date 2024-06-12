@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "~normalize.css/normalize.css";
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+.w-container{
+    width: 100%;
+    max-width: 100%;
+}
+
+product-image{
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.background-container{
+    width: 100%;
+    height: 100%;
+    background: white !important;
+}
+
+.flex-start{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}

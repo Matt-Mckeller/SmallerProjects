@@ -1,0 +1,14 @@
+<div class="slider-container" [style.height]="height">
+  <swiper [config]="swiperConfig" >
+    <div class="slider-slide-container" *ngFor="let productImage of productImages">
+      <div class="slide-wrapper">
+        <div class="slider-slide-content-container">
+          <product-image
+                  [productImage]="productImage"
+                  [height]="imgHeight"
+          ></product-image>
+        </div>
+      </div>
+    </div>
+  </swiper>
+</div>

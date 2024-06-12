@@ -1,0 +1,40 @@
+.form-container{
+    margin-top: 20px;
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.cart-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 2% auto;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+}
+.button-container button{
+    margin: 0 0 0 2%;
+}
+
+.bottom-button-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+}
+
+checkout-cart-display{
+    width: 100%;
+}

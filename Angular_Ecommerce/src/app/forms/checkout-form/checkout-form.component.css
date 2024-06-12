@@ -1,0 +1,58 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.checkout-form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.mat-expansion-panel-header-description
+{
+    justify-content: flex-end;
+}
+
+.mat-action-row button{
+    margin: 0 2px;
+}
+
+.shipping-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.shipping-radio-button {
+    margin: 5px;
+}
+
+
+.checkout-review-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+.divider-top{
+    border-top: dotted #bbb;
+    border-width: 1px 0;
+    margin: 20px 0 !important;
+}
+
+.review-label{
+
+}
+
+.submit-button-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}

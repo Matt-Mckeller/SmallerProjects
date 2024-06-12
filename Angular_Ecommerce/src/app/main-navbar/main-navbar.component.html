@@ -1,0 +1,23 @@
+<!--<mat-toolbar>-->
+<div class="header-content-wrapper"
+     fxLayout="row" fxLayoutAlign="space-between"
+>
+  <div class="header-slice" fxLayout="row" fxLayoutAlign="center center">
+    <div class="menu-button-container" fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon class="menu-button-icon" (click)="toggleSideNav()">menu</mat-icon>
+    </div>
+  </div>
+
+  <div class="header-slice" fxLayout="row" fxLayoutAlign="center center">
+    <!--Expanse Services-->
+    <button class="header-logo-button" mat-button routerLink="/home" >
+      <img class="header-logo-img" src="assets/logos/VintageHails-Logo-2-WEB-01.png">
+    </button>
+  </div>
+
+  <div class="header-slice" fxLayout="row" fxLayoutAlign="center center">
+    <!--Expanse Services-->
+    <cart-icon></cart-icon>
+  </div>
+</div>
+<!--</mat-toolbar>-->

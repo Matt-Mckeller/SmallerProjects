@@ -1,0 +1,14 @@
+.full-width{
+    width: 100%;
+}
+
+.expiration-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cvv{
+    width: 80px;
+    margin-bottom: 20px;
+}
+

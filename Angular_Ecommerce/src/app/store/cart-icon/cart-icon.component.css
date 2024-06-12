@@ -1,0 +1,22 @@
+.cart-container{
+    cursor: pointer;
+    display:flex;
+}
+
+.item-count-badge{
+    height: 15px;
+    width: 15px;
+    position: relative;
+    top: -5px;
+    right: 10px;
+    border-radius: 100%;
+    background: red;
+}
+
+.item-count-badge span{
+    color: #fff;
+    font-size: 10px;
+    position: relative;
+    top: -4px;
+    right: -5px;
+}

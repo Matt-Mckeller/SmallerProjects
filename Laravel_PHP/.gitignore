@@ -1,0 +1,20 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.env
+
+#Do not publicly show security files!
+/Expanse/AccessControl
+/Expanse/Authentication
+/Expanse/Encryption
+/Expanse/Database
+/app/Http/Middleware/RedirectIfAuthenticated.php
+/app/Http/Middleware/RouteAuthentication.php
+

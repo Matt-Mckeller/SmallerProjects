@@ -1,0 +1,53 @@
+// Typography
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+//Colors
+$primary: #3D6DB2;
+$primary-dark: #2C4F81;
+$secondary: #B1CC25;
+$secondary-dark: #8DCB00;
+$black: black;
+$white: white;
+$error: maroon;
+$red: maroon;
+
+
+.bold {
+  font-weight: bold;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+//Percentages
+$full: 100%;
+$half: 50%;
+$quarter: 25%;
+
+//Containers
+$container-width: 95%;
+$min-container-height: 700px;
+
+//Links
+$link-color: blue;
+$link-visited: red;
+
+//Heading
+$heading-color: red;
+$header-background-color: orange;
+
+//Buttons
+$button-bg-color: white;
+$button-default-color: purple;
+$button-hover-color: green;
+
+//Footer
+$footer-background-color: black;
+$footer-text-color: black;

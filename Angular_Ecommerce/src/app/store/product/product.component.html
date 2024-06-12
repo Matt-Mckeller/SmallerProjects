@@ -1,0 +1,31 @@
+<mat-grid-list [cols]="totalCols" *ngIf="product && totalCols" rowHeight="100px">
+    <mat-grid-tile [colspan]="sliderCols" rowspan="6">
+        <product-image-slider
+                [product]="product"
+                height="600px"
+        ></product-image-slider>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="detailsCols" [rowspan]="detailsRows">
+        <h1>{{product?.name}}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="detailsCols" [rowspan]="detailsRows">
+        <div fxLayout="column" fxLayoutAlign="center center" class="w-container">
+            <div fxFlex="100%">
+                <label>Price:</label>
+                <span class="price-display">{{product.price | currency:'USD':true}}</span>
+            </div>
+            <div fxFlex="100%">
+                <label>Shipping:</label>
+                <span class="shipping-display">Eventually</span>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="detailsCols" [rowspan]="detailsRows">
+        <button mat-raised-button (click)="buy()">Buy Now</button>
+        <button mat-raised-button (click)="addToCart(product)"><mat-icon>add_shopping_cart</mat-icon></button>
+    </mat-grid-tile>
+</mat-grid-list>
+<div *ngIf="product"
+     class="description-container"
+     [innerHtml]="product.description">
+</div>

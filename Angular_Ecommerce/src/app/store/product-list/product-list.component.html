@@ -1,0 +1,32 @@
+<mat-grid-list [cols]="colCount" [rowHeight]="rowHeight" gutterSize="24px">
+  <mat-grid-tile *ngFor="let product of products" colspan="3">
+    <div class="card-container">
+      <mat-card class="mat-elevation-z0">
+        <div fxFlexFill fxLayout="column" fxFlex="100%">
+          <div class="card-details-container" fxFlexFill fxLayout="row" fxFlex="100%">
+            <div fxFlex="100%" fxLayout="column" fxFlexFill>
+
+              <div class="card-image-container" fxFlex="70%" fxLayoutAlign="center center">
+                <product-image [height]="imageHeight" [product]="product" (click)="redirect(product.id)"></product-image>
+              </div>
+              <div fxFlex="30%">
+                <mat-card-header>
+                  <mat-card-title>
+                    <a (click)="redirect(product.id)">
+                      <span>{{product.name}}</span>
+                    </a>
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-card-content >
+                  <span class="price-display">{{product.price | currency:'USD':true}}</span>
+                  <span class="shipping-display">Ships eventually</span>
+                </mat-card-content>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,20 @@
+<div class="card-container">
+    <mat-card class="inset card-hover">
+        <img mat-card-image routerLink="/vintage" alt="holiday vintage clothing banner" src="../../assets/banners/Holiday_banner_1.png" >
+        <mat-card-content>
+            <h1 routerLink="/vintage">
+                Authentic Vintage Clothing for Women
+            </h1>
+            <div fxLayout="row" fxLayoutWrap routerLink="/vintage">
+                <div fxFlex="0 0 100%"
+                     fxFlex.gt-sm="0 0 50%"
+                     *ngFor="let product of products">
+                    <product-image [product]="product"></product-image>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button color="primary" routerLink="/vintage" mat-raised-button>SHOP</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,11 @@
+<div>
+    <h2>Current Product Images</h2>
+<mat-grid-list cols="12" rowHeight="300px" gutterSize="24px">
+  <mat-grid-tile *ngFor="let productImage of images" colspan="4">
+      <div class="image-container">
+          <product-image [productImage]="productImage"></product-image>
+          <current-images-remove-image-fab [productImage]="productImage"></current-images-remove-image-fab>
+      </div>
+  </mat-grid-tile>
+</mat-grid-list>
+</div>

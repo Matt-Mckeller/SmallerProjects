@@ -1,0 +1,24 @@
+@import '~@angular/material/_theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+
+$vh-red: #da222f;
+// Define a theme.
+//$primary: mat-palette($mat-grey, 300, 200, 400);
+//$accent:  mat-palette($mat-cyan, 600, 200, 800);
+
+//$primary: mat-palette($mat-blue-grey, 50, 50, 100);
+//$accent:  mat-palette($mat-cyan, 500, 300, 700);
+
+$primary: mat-palette($mat-pink, 500, 300, 700);
+$accent:  mat-palette($mat-cyan, 200, 50, 400);
+$warn:    mat-palette($mat-amber, 500, 300, 700);
+
+//$primary: mat-palette($mat-teal, A200, A100, A400);
+//$accent:  mat-palette($mat-teal, 600, 300, 800);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+// Include all theme styles for the components.
+@include angular-material-theme($theme);

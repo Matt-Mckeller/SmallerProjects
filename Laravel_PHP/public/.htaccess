@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+SetEnvIf Origin "^http(s)?://(.+\.)?(vintagehails\.com|expanseservices\.com|63.238.254.186|localhost:4200)$" origin_is=$0
+Header always set Access-Control-Allow-Origin %{origin_is}e env=origin_is
+Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+Header add Access-Control-Allow-Credentials: true
+Header add Access-Control-Allow-Methods: "POST, GET, OPTIONS, DELETE"
+Header add Access-Control-Request-Method: GET
+Header add Access-Control-Request-Method: POST
+Header add Access-Control-Request-Method: PUT
+Header add Access-Control-Request-Method: DELETE
+Header add Access-Control-Request-Method: OPTIONS

@@ -1,0 +1,17 @@
+#social-media-icons-container{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  color: $footer-text-color;
+  float: left;
+  height:3em;
+}
+
+.social-media-link{
+  margin: 1em;
+  color: $footer-text-color;
+  text-decoration: none;
+}

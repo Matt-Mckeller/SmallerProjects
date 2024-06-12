@@ -1,0 +1,87 @@
+<div [formGroup]="form">
+  <mat-form-field class="full-width">
+    <label for="firstName">First Name</label>
+    <input matInput id="firstName"
+           formControlName="firstName" required
+           [(ngModel)]="model.firstName"
+    >
+    <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+
+  <!--Last Name-->
+  <mat-form-field class="full-width">
+    <label for="lastName">Last Name</label>
+    <input matInput type="text" id="lastName"
+           required
+           formControlName="lastName"
+           [(ngModel)]="model.lastName"
+    >
+    <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+
+  <!--Address 1-->
+  <mat-form-field class="full-width">
+    <label for="address1">Address 1</label>
+    <input matInput type="text" id="address1"
+           required
+           formControlName="address1"
+           [(ngModel)]="model.address1"
+    >
+    <mat-error *ngIf="address1.invalid && (address1.dirty || address1.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+
+  <!--Address 2-->
+  <mat-form-field class="full-width">
+    <label for="address2">Address 2</label>
+    <input matInput type="text" id="address2"
+           required
+           formControlName="address2"
+           [(ngModel)]="model.address2"
+    >
+  </mat-form-field>
+
+  <!--City-->
+  <mat-form-field class="full-width">
+    <label for="city">City</label>
+    <input matInput type="text" id="city"
+           required
+           formControlName="city"
+           [(ngModel)]="model.city"
+    >
+    <mat-error *ngIf="city.invalid && (city.dirty || city.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+
+  <!--State-->
+  <mat-form-field class="full-width">
+    <label for="state">State</label>
+    <input matInput type="text" id="state"
+           required
+           formControlName="state"
+           [(ngModel)]="model.state"
+    >
+    <mat-error *ngIf="state.invalid && (state.dirty || state.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+
+  <!--Zip-->
+  <mat-form-field class="full-width">
+    <label for="zip">Zip Code</label>
+    <input matInput type="text" id="zip"
+           required
+           formControlName="zip"
+           [(ngModel)]="model.zip"
+    >
+    <mat-error *ngIf="zip.invalid && (zip.dirty || zip.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+</div>

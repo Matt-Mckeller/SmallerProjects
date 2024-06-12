@@ -1,0 +1,102 @@
+<div class="form-container">
+  <div [formGroup]="form">
+    <mat-form-field class="full-width"
+                    [hideRequiredMarker]="form.value.hideRequired"
+                    [floatPlaceholder]="form.value.floatPlaceholder">
+      <input matInput type="text" id="productName" placeholder="Product Name"
+             required
+             formControlName="productName"
+             [(ngModel)]="model.name"
+      >
+      <mat-error *ngIf="productName.invalid && (productName.dirty || productName.touched)">
+        Product name is invalid
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput type="text" id="productPrice"
+             placeholder="Product Price"
+             required
+             formControlName="productPrice"
+             [(ngModel)]="model.price"
+      >
+      <mat-error *ngIf="productPrice.invalid && (productPrice.dirty || productPrice.touched)">
+        Product price is invalid
+      </mat-error>
+    </mat-form-field>
+
+    <div *ngIf="productIsLoaded">
+      <mat-error *ngIf="productDescription.invalid && (productDescription.dirty || productDescription.touched)">
+        Product Description is invalid.
+      </mat-error>
+      <app-product-description-editor
+              [form]="form"
+              productControlName="productDescription"
+              [description]="model.description"
+              (descriptionChange)="model.description = $event"
+              (onReadyChange) = "descriptionIsLoaded = $event"
+      ></app-product-description-editor>
+    </div>
+
+    <h3>Upload Product Images</h3>
+    <div class="upload-section" fxLayout="row" fxLayoutGap="5%">
+      <div fxFlex="30%" class="uploading-actions-container">
+        <div class="drop-zone-container">
+          <div ng2FileDrop
+               [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+               (fileOver)="fileOverBase($event)"
+               [uploader]="uploader"
+               class="my-drop-zone">
+            Drop images to upload
+          </div>
+        </div>
+        <h4>Browse for images</h4>
+        <div class="upload-button-container">
+          <input class="upload-button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
+        </div>
+      </div>
+
+      <div fxFlex="70%" class="uploaded-items-container">
+        <div *ngFor="let item of uploader.queue">
+          <div>{{item?.file?.name}}</div>
+          <div>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</div>
+          <div>
+            <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+            <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+            <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+          </div>
+          <div>
+            <button mat-raised-button color="accent" type="button" class="btn btn-success btn-xs"
+                    (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+              <span class="glyphicon glyphicon-upload"></span> Upload
+            </button>
+            <button mat-raised-button color="warn" type="button" class="btn btn-warning btn-xs"
+                    (click)="item.cancel()" [disabled]="!item.isUploading">
+              <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+            </button>
+            <button mat-raised-button color="warn" type="button" class="btn btn-danger btn-xs"
+                    (click)="item.remove()">
+              <span class="glyphicon glyphicon-trash"></span> Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="current-images-container">
+      <app-current-images [images]="allProductImages"></app-current-images>
+    </div>
+
+    <div *ngIf="finishedLoading" class="submit-button-container" fxLayout="row" fxLayoutAlign="center">
+      <button
+              mat-raised-button
+              fxFlex.lt-md="50%"
+              fxFlex.gt-sm="40%"
+              type="submit"
+              [disabled]="form.invalid"
+              color="accent"
+              (click)="submit()"
+      >Save Product</button>
+    </div>
+  </div>
+</div>

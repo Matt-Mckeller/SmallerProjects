@@ -1,0 +1,8 @@
+<div class="cart-container" (click)="redirectCart()">
+  <mat-icon class="icon">shopping_cart</mat-icon>
+  <div *ngIf="itemCount > 0" class="item-count-badge">
+    <span>
+      {{itemCount}}
+    </span>
+  </div>
+</div>

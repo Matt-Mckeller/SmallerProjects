@@ -1,0 +1,2 @@
+[24-Jul-2017 23:09:12 UTC] PHP Fatal error:  Class 'App\Models\Customers\Customer' not found in /home/advicelol/public_html/expanse/app/Http/Controllers/Api/ContactController.php on line 89
+[24-Jul-2017 23:10:17 UTC] PHP Fatal error:  Class 'App\Events\newInquiryEvent' not found in /home/advicelol/public_html/expanse/app/Http/Controllers/Api/ContactController.php on line 81

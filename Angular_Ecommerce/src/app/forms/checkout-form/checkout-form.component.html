@@ -1,0 +1,143 @@
+<div class="container">
+  <h1>Checkout</h1>
+  <form [formGroup]="checkoutForm" #formDir="ngForm" class="checkout-form">
+    <mat-accordion class="align-headers">
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            1. Shipping Address
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon>local_shipping</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-address-fields [(model)]="shippingAddressModel"></app-address-fields>
+
+        <!--Phone-->
+        <mat-form-field class="full-width">
+          <label for="phoneNumber">Phone</label>
+          <input matInput type="text" id="phoneNumber"
+                 required
+                 formControlName="phoneNumber"
+                 [textMask]="{mask: phoneMask}"
+                 [(ngModel)]="sanitizedPhoneNumber"
+          >
+          <mat-error *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+            Phone is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-action-row>
+          <button mat-raised-button color="primary" type="button" (click)="nextStep()">Save and continue</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            2. Shipping Method
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon>redeem</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-radio-group class="shipping-radio-group"
+                        formControlName="shippingSelection"
+                        [(ngModel)]="model.shippingSelection">
+          <mat-radio-button class="shipping-radio-button"
+                           *ngFor="let shippingOption of shippingOptions | async"
+                           [value]="shippingOption">
+            {{shippingOption.text}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <mat-action-row>
+          <button mat-raised-button color="warn" type="button" (click)="prevStep()">Go back</button>
+          <button mat-raised-button color="primary" type="button" (click)="nextStep()">Save and continue</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            3. Payment
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon>payment</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div id="stripe-card-element">
+          <label for="card-element">
+            Credit or debit card
+          </label>
+          <div id="card-element">
+            <!-- a Stripe Element will be inserted here. -->
+          </div>
+
+          <!-- Used to display form errors -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+
+        <!--Use shipping as billing-->
+        <mat-checkbox type="checkbox" formControlName="useShippingAddressForBilling" required>
+          Billing information is the same as your shipping information
+        </mat-checkbox>
+
+        <!--Billing address-->
+        <div *ngIf="useShippingAddressForBilling.value === false">
+          <app-address-fields [(model)]="billingAddressModel"></app-address-fields>
+        </div>
+
+        <mat-action-row>
+          <button mat-raised-button color="warn" type="button" (click)="prevStep()">Go back</button>
+          <button mat-raised-button color="primary" type="button" (click)="nextStep()">Save and continue</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            4. Review Your Order
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon>assignment</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="checkout-review-container">
+          <div class="review-label">Merchandise cost </div>
+          <div>{{productTotalCost | currency:'USD':true}}</div>
+        </div>
+
+        <div class="checkout-review-container">
+          <div class="review-label">Shipping cost </div>
+          <div>{{shippingTotalCost | currency:'USD':true}}</div>
+        </div>
+
+        <div class="checkout-review-container">
+          <div class="review-label">Estimated Sales Tax </div>
+          <div>{{taxTotalCost | currency:'USD':true}}</div>
+        </div>
+
+        <div class="checkout-review-container divider-top">
+          <div class="review-label">Total cost </div>
+          <div>{{checkoutTotal | currency:'USD':true}}</div>
+        </div>
+
+        <mat-action-row>
+          <div class="submit-button-container">
+            <button mat-raised-button color="warn" type="button" (click)="prevStep()">Go back</button>
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()"
+                    [disabled]="checkoutForm.invalid">Place Order</button>
+          </div>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </form>
+</div>

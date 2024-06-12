@@ -1,0 +1,16 @@
+<div class="sidenav-container">
+  <div class="tab-container">
+    <div *ngFor="let tab of tabs">
+      <button mat-button class="tab" routerLink="{{tab.link}}" routerLinkActive="active" (click)="handleClose($event)">
+        <div fxLayout="row">
+          <div fxFlex="20%" fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon>{{tab.icon}}</mat-icon>
+          </div>
+          <div fxFlex="80%" fxLayout="column" fxLayoutAlign="center start">
+            <a class="mat-body-2">{{tab.text}}</a>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

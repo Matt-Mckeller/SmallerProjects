@@ -1,0 +1,47 @@
+.pagination-container {
+  font-size: 1.4em;
+}
+
+.nav-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav-button {
+  padding: 0;
+  background: none;
+}
+
+.nav-label{
+  text-decoration: none;
+}
+
+.nav-button a{
+  margin: 2px;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1.2em;
+  color: white;
+  z-index: 10005;
+}
+
+.active:before {
+  //content: "\f0c9";
+  content: "\f2c0";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  font-family: FontAwesome;
+  text-transform: none !important;
+  padding: 0.5em;
+}
+
+.nav-menu-icon:before {
+  margin: 0 0.5em 0 0;
+}
+.nav-wrapper{
+
+}

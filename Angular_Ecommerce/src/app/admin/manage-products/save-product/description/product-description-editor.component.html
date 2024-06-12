@@ -1,0 +1,16 @@
+<h3>Product Description</h3>
+<div [formGroup]="form">
+  <ckeditor
+          [(ngModel)]="description"
+          formControlName="{{productControlName}}"
+          [config]="editorConfig"
+          [readonly]="false"
+          (change)="onChange($event)"
+          (ready)="onReady($event)"
+          (focus)="onFocus($event)"
+          (blur)="onBlur($event)"
+          debounce="500"
+    >
+  </ckeditor>
+
+</div>

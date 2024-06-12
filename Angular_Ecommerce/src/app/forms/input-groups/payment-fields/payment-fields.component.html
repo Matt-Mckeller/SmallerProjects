@@ -1,0 +1,49 @@
+<div [formGroup]="form">
+  <!--Card number-->
+  <mat-form-field class="full-width">
+    <label for="cardNumber">Card Number</label>
+    <input matInput id="cardNumber"
+           formControlName="cardNumber" required
+           [(ngModel)]="model.cardNumber"
+    >
+    <mat-error *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)">
+      Invalid input
+    </mat-error>
+  </mat-form-field>
+
+  <div class="expiration-container">
+  <!--Card expiration month-->
+    <mat-select id="cardExpirationMonth"
+           formControlName="cardExpirationMonth" required
+           [(ngModel)]="model.cardExpirationMonth"
+            placeholder="Expiration Month">
+      <mat-option *ngFor="let month of expirationMonths" [value]="month.value">
+        {{month.viewValue}}
+      </mat-option>
+    </mat-select>
+
+    <!--Card Expiration Year-->
+    <mat-select id="cardExpirationYear"
+           formControlName="cardExpirationYear"
+            required
+           [(ngModel)]="model.cardExpirationYear"
+           placeholder="Expiration Year">
+      <mat-option *ngFor="let year of expirationYears" [value]="year">
+        {{year}}
+      </mat-option>
+    </mat-select>
+  </div>
+  <!--Security code-->
+  <div class="full-width">
+    <mat-form-field class="cvv">
+      <label for="cardSecurityCode">CVV</label>
+      <input matInput id="cardSecurityCode"
+             formControlName="cardSecurityCode" required
+             [(ngModel)]="model.cardSecurityCode"
+      >
+      <mat-error *ngIf="cardSecurityCode.invalid && (cardSecurityCode.dirty || cardSecurityCode.touched)">
+        Invalid input
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>

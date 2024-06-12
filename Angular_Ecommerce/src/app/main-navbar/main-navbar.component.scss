@@ -1,0 +1,47 @@
+// Import theming functions
+@import '~@angular/material/theming';
+// Import your custom theme
+@import 'src/assets/scss/custom-material-theme.scss';
+
+.mat-toolbar{
+    background: white;
+}
+
+.liner {
+    width: 100%;
+    height: 20px;
+    background: white;
+}
+
+.header-content-wrapper{
+    height: 100%;
+    width: 100%;
+    padding: 0 5%;
+}
+
+.menu-button-container{
+    cursor: pointer;
+}
+
+.header-slice{
+    height: 100%;
+}
+
+.icon{
+    padding: 0 14px;
+}
+
+.header-logo-img{
+    height: 100%;
+    width: auto;
+}
+
+
+.header-logo-button /deep/ .mat-button-focus-overlay {
+    background-color:transparent;
+}
+
+.header-logo-button{
+    height: 90%;
+    width: auto;
+}

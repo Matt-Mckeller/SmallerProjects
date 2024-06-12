@@ -1,0 +1,12 @@
+<div class="page-container">
+    <div class="button-container">
+      <button mat-raised-button (click)="redirectShopping()">Continue Shopping</button>
+      <button mat-raised-button color="primary" (click)="redirectCheckout()">Proceed to checkout</button>
+    </div>
+    <div class="cart-container">
+      <checkout-cart-display [displayRemove]="true"></checkout-cart-display>
+    </div>
+    <div class="bottom-button-container">
+      <button mat-raised-button color="primary" (click)="redirectCheckout()">Proceed to checkout</button>
+    </div>
+</div>

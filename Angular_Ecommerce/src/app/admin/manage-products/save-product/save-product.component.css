@@ -1,0 +1,34 @@
+.full-width{
+    width: 100%;
+}
+
+.submit-button-container{
+    margin-top: 20px;
+}
+
+.my-drop-zone {
+    border: dotted 3px lightgray;
+    max-height: 100%;
+    max-width: 100%;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-button-container{
+    width: 100%;
+    height: auto;
+}
+
+.upload-button{}
+
+.drop-zone-container{
+    width: 100%;
+    height: auto;
+}
+
+.nv-file-over {
+    border: dotted 3px red;
+}

@@ -1,0 +1,6 @@
+[24-Jul-2017 21:06:05 UTC] PHP Parse error:  syntax error, unexpected 'begin' (T_STRING) in /home/advicelol/public_html/expanse/public/imgs/stairs_white_edited_4_1.jpg on line 26
+[24-Jul-2017 21:06:05 UTC] PHP Warning:  Unexpected character in input:  '' (ASCII=17) state=0 in /home/advicelol/public_html/expanse/public/imgs/pexels-photo-110078.jpeg on line 1146
+[24-Jul-2017 21:06:05 UTC] PHP Parse error:  syntax error, unexpected 'оя' (T_STRING) in /home/advicelol/public_html/expanse/public/imgs/pexels-photo-110078.jpeg on line 1146
+[24-Jul-2017 21:06:05 UTC] PHP Parse error:  syntax error, unexpected 'begin' (T_STRING) in /home/advicelol/public_html/expanse/public/imgs/stairs_white_edited_4_1.jpg on line 26
+[24-Jul-2017 21:06:05 UTC] PHP Warning:  Unexpected character in input:  '' (ASCII=17) state=0 in /home/advicelol/public_html/expanse/public/imgs/pexels-photo-110078.jpeg on line 1146
+[24-Jul-2017 21:06:05 UTC] PHP Parse error:  syntax error, unexpected 'оя' (T_STRING) in /home/advicelol/public_html/expanse/public/imgs/pexels-photo-110078.jpeg on line 1146
